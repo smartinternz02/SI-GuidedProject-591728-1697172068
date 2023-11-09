@@ -69,4 +69,4 @@ def predict() :
     prediction = np.round(prediction,2)
     return render_template('watch_prediction.html', prediction_text ="is {}".format(prediction))
 if __name__=='__main__':
-        app.run()
+       flask_app.run(debug=True)
