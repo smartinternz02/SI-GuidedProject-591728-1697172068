@@ -1,27 +1,252 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="styles.css">
-    </head>
-    <body class="framed">
-       <header> 
-        <h2>SMART WATCH PREDICTION</h2>
-</header>
-<nav>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li>
-        <li><a href="/predict">Statistics</a></li>
-     </ul>
-</nav>
-<main>
-    <section>
-        <h3>Watch Your Wallet</h3>
-        <p>Stay Ahead of Smart Watch Price Trends with Our Predictions</p>
-        <img src="C:\Users\hp\OneDrive\Desktop\watch.jpg"/>
-        <button>predict</button>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Home Temperature</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+          .home {
+              text-align: center;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              margin-top: -100px;
+              height: 500px;
+          }
+
+          /* Style for the text */
+          .text-two {
+              font-size: 40px;
+          }
+
+          /* Style for the button */
+          .predict-button {
+              background-color: #4CAF50;
+              color: white;
+              padding: 10px 20px;
+              text-decoration: none;
+              font-size: 20px;
+              margin-top: 20px;
+              cursor: pointer;
+          }
+
+          /* Style for the navbar */
+          .navbar {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              background-color: #333;
+              color: white;
+              padding: 20px;
+          }
+
+          /* Style for the navigation links */
+          .navbar a {
+              text-decoration: none;
+              color: white;
+              padding: 10px;
+              font-size: 25px;
+          }
+
+          /* Style for the "Smart Home Temperature" text */
+          .navbar-heading {
+              font-size: 30px;
+          }
+          .about p{
+            font-size: 20px;
+            margin-left: 40px;
+            margin-right: 40px;
+
+          }
+          .about{
+            height: 1000px;;
+          }
+          .about h1{
+            font-size: 30px;
+            margin-left: 40px;
+            margin-right: 40px;
+
+          }
+          .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .contact-form {
+            margin-top: 20px;
+        }
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-input:focus {
+            outline: none;
+            border: 1px solid #4CAF50;
+        }
+        .form-textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-textarea:focus {
+            outline: none;
+            border: 1px solid #4CAF50;
+        }
+        .submit-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+        .predict {
+            text-align: center;
+        }
+
+        .predict_content {
+            display: inline-block;
+            text-align: left;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        h2 {
+        font-size: 24px;
+        }
+        .environment-conditions {
+        font-size: 24px;
+        margin-top: 20px;
+        }
+        .condition-input {
+        margin-top: 10px;
+        width: 200px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        }
+        .predict-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 20px;
+        }
+        .predict-button:hover {
+        background-color: #45a049;
+        }
+        .predict{
+        height: 2000px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-heading">
+           smart watch prices
+        </div>
+        <div>
+            <a href="#about">About</a>
+            <a href="#predict">Predict</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Rest of your content -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <div class="text-two">Welcome to Smart watch</div>
+        </div>
     </section>
-</main>
-        
+    <section class="about" id="about">
+      <div class="about-content">
+        <h1>About</h1>
+        <p>
+          smartwatches may become more advanced, offering new features and capabilities.
+      </p>
+      <p>
+        The smartwatch market is competitive, with many manufacturers vying for market share. Increased competition can lead to more competitive pricing, especially for mid-range and budget smartwatches
+      </p>
+      <p>
+        Smartwatches follow typical product lifecycles, with newer models being introduced periodically. When new models are released, older ones may see price reductions to clear inventory
+      
+      </div>
+  </section>
+
+  
+  
+<section class="predict" id="predict">
+    <div class="predict_content">
+    <form  action="{{url_for('predict')}}" method="post"  id="predict-form" >
+    <div class="environment-conditions">
+        Brand <br> <input type="text" class="condition-input" name="Brand" placeholder="Enter Brand" required="required" /><br><br>
+        Model<br><input type="text" class="condition-input" name="Model" placeholder="Enter Model" required="required" /><br><br>
+		Operating_System <br><input type="text" class="condition-input" name="Operating_System         " placeholder="EnterOperating_System         " required="required" /><br><br>
+        Connectivity<br><input type="text" class=" condition-input" name=" Connectivity" placeholder="Enter  Connectivity " required="required" /><br><br>
+        Display_Type             <br><input type="text" class="condition-input" name="Display_Type             " placeholder="Enter Display_Type             " required="required" /><br><br>
+        Display_Size_inches      <br><input type="text" class="condition-input" name="Display_Size_inches      " placeholder="Enter Display_Size_inches       " required="required" /><br><br>
+        Resolution               <br><input type="text" class="condition-input" name="Resolution               " placeholder="Enter Resolution               " required="required" /><br><br>
+        Water_Resistance_meters  <br><input type="text" class="condition-input" name="Water_Resistance_meters  " placeholder="Enter Water_Resistance_meters  " required="required" /><br><br>
+        Battery_Life_days        <br><input type="text" class="condition-input" name="Battery_Life_days        " placeholder="Enter Battery_Life_days        " required="required" /><br><br>
+        Heart_Rate_Monitor       <br><input type="text" class="condition-input" name="Heart_Rate_Monitor       " placeholder="Enter Heart_Rate_Monitor       " required="required" /><br><br>
+        GPS                      <br><input type="text" class="condition-input" name="GPS                      " placeholder="Enter GPS                      " required="required" /><br><br>
+        NFC                      <br><input type="text" class="condition-input" name="NFC                      " placeholder="Enter NFC                      " required="required" /><br><br>
+        <button class="predict-button" type="submit">Submit</button>
+
+
+        <br>
+<br>
+{{ prediction_text }}
+    </div>
+</form>
+</div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="contact-content">
+        <h2>Contact Smart Home Temperature</h2>
+        <p>
+            Have questions or need assistance with our smart watch prices solutions? Feel free to get in touch with us. We're here to help!
+        </p>
+        <div class="contact-form">
+            <form>
+                <input class="form-input" type="text" placeholder="Your Name">
+                <input class="form-input" type="email" placeholder="Your Email">
+                <textarea class="form-textarea" placeholder="Your Message"></textarea>
+                <button class="submit-button" type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+    
+
+
 </body>
 </html>
